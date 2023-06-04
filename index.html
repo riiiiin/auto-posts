@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto-posts</title>
+    <style>
+        .post-image {
+            background-image: url(./5.png);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="">
+        <div class="">
+            <label for="">タイトル</label>
+            <input id="title" />
+        </div>
+        <div class="">
+            <label for="">説明</label>
+            <input id="description" />
+        </div>
+        <div class="">
+            <label for="">カテゴリ</label>
+            <input id="category" />
+        </div>
+        <button id="btn">反映</button>
+    </div>
+    <div id="post-image1" class="post-image" style="position: relative; width: 500px; height: 500px;">
+        <img src="./7.png" id="post-image1" style="width: 100%; position: absolute;" />
+        <img src="./5.png" id="post-image2" style="width: 100%; position: absolute;" />
+        <img src="./9.png" id="post-image3" style="width: 100%; position: absolute;" />
+        <div class="" id="post-title" style="font-size: 40px;font-family: 'Zen Maru Gothic', sans-serif;text-align: center; padding-top: 80px; position: relative;"></div>
+        <div class="" id="post-description" style=" position: relative;font-family: 'Zen Kaku Gothic Antique', sans-serif;margin: 30px 100px;
+        text-align: center;"></div>
+        <div class="" id="post-category" style=" position: absolute;font-family: 'Zen Kaku Gothic Antique', sans-serif;display: inline;
+        padding: 5px 30px;
+        border-radius: 100px;background-color: #334535;
+    color: white;bottom: 80px;
+    right: 80px;"></div>
+    </div>
+    <script>
+        const elem = document.getElementById('btn')
+
+        elem.addEventListener('click',function(){
+            let elem1 = document.getElementById('title')
+            let title_text = elem1.value
+            document.getElementById('post-title').textContent = title_text
+            let elem2 = document.getElementById('description')
+            let description_text = elem2.value
+            console.log(description_text.length)
+            document.getElementById('post-description').textContent = description_text
+            let elem3 = document.getElementById('category')
+            let category_text = elem3.value
+            document.getElementById('post-category').textContent = category_text
+
+
+            if (description_text.length < 50) {
+                document.getElementById("post-image2").style.display ="none";
+                document.getElementById("post-image3").style.display ="none";
+                document.getElementById("post-title").style.paddingTop ="160px";
+            } else if (description_text < 100) {
+                document.getElementById("post-image3").style.display ="none";
+            } else {
+                
+            }
+        });
+    </script>
+</body>
+</html>
