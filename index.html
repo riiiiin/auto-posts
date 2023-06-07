@@ -60,16 +60,27 @@
             let elem3 = document.getElementById('category')
             let category_text = elem3.value
             document.getElementById('post-category').textContent = category_text
-
+            if (title_text.length < 10) {
+                document.getElementById("post-title").style.fontSize = "40px";
+                console.log('10文字以下')
+            } else if (title_text.length < 15) {
+                document.getElementById("post-title").style.fontSize = "30px";
+                console.log('15文字以下')
+            } else {
+                document.getElementById("post-title").style.fontSize = "20px";
+                console.log('15文字以上')
+            }
 
             if (description_text.length < 50) {
                 document.getElementById("post-image2").style.display ="none";
                 document.getElementById("post-image3").style.display ="none";
                 document.getElementById("post-title").style.paddingTop ="160px";
-            } else if (description_text < 100) {
-                document.getElementById("post-image3").style.display ="none";
+                console.log('50文字以下')
+            } else if (description_text.length < 100) {
+                console.log('100文字以下')
             } else {
-                
+                console.log('100文字以上')
+                document.getElementById("post-image3").style.display ="none";
             }
         });
     </script>
